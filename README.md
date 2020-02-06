@@ -217,14 +217,16 @@ print("Initial Objective Function Value = ",fobj)
 xm.initializeOptimizer(initMetric,ubound, lbound, dim, maxIter, maxSamples, x0, iseedId,minOrMax)
 
 ##OPTIMIZATION LOOP
-for i in range(maxIter):
-    newSuggestions = xm.getParameters()        
-    fobj = cost_function(newSuggestions, dim)        
-    xm.updateObjectiveFunctionValue(fobj)
+#OPtional Step: Use TQDM Library for nice progress bar 
+with trange(maxIter) as t:
+    for i in t:
+        newSuggestions = xm.getParameters()        
+        fobj = cost_function(newSuggestions, dim)        
+        xm.updateObjectiveFunctionValue(fobj)
 
-    ##Optional step: Check the progress of the optmization
-    obj,pareato,feval,_ = xm.getProgress()   
-    print("Feval = ", feval, " Best Objective = ", pareato, " Current Objective = ", obj)
+        ##Optional step: Check the progress of the optmization
+        obj,pareato,feval,_ = xm.getProgress()   
+        print("Feval = ", feval, " Best Objective = ", pareato, " Current Objective = ", obj)
 
 x0 = xm.getParameters(False)
 fobj = cost_function(x0, dim)
