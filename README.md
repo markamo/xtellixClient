@@ -4,10 +4,10 @@ This is a simple example usage of how to initialize the Optimization Engine Serv
 
 # SECTION A
 ## PREREQUISITES: INSTALL KEY LIBRARIES & INITIALIZE SERVER
-**Install xtellixClient using pip command [https://pypi.org/project/xtellixClient-0.0.1/](https://pypi.org/project/xtellixClient-0.0.1/)**
+**Install xtellixClient using pip command [https://pypi.org/project/xtellixClient/](https://pypi.org/project/xtellixClient-0.0.1/)**
 Read more at [Github](https://github.com/markamo/xtellixClient)
 ```
-pip install xtellixClient-0.0.1
+pip install xtellixClient
 ```
 
 ### STEP 1A: IMPORT XTELLIX CLIENT LIBRARIES
